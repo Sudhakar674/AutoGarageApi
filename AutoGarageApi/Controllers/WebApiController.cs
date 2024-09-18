@@ -2037,21 +2037,7 @@ namespace AutoGarageApi.Controllers
             return Json(Response, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Testing()
-        {
-            return View();
-        }
-
-        public ActionResult TestingKumarSharma()
-        {
-            return View();
-        }
-
-
-        public ActionResult SudhakarSharma()
-        {
-            return View();
-        }
+      
         /*** From here show all save records list end ***/
     }
 }
