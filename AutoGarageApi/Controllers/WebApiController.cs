@@ -2038,6 +2038,14 @@ namespace AutoGarageApi.Controllers
         }
 
 
+
+        public ActionResult Testing()
+        {
+            return View();
+        }
+
+
+
         /*** From here show all save records list end ***/
     }
 }
