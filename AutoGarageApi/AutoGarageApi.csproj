@@ -188,6 +188,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\WebApi\Index.cshtml" />
     <Content Include="Views\WebApi\Testing.cshtml" />
+    <Content Include="Views\WebApi\TestingKumarSharma.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
