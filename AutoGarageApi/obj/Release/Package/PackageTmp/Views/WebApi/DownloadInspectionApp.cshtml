@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "DownloadInspectionApp";
+}
+
+@*<a href="../AppBuildCode/app-release.apk" download>
+        <i class="mdi mdi-download" style="font-size:25px;color:red"></i>
+        <center>
+            <h1>Download Now</h1>
+        </center>
+    </a>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
+
+
+
+
+    <h1>Download APK Folder</h1>
+
+    <!-- Button to download ZIP -->
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <a href="~/AppBuildCode/app-release.apk" download="app-release.apk">Download APK Folder</a>
+   
+    <script>
+        $(document).ready(function () {
+            $('#downloadBtn').on('click', function () {
+                // Redirect to the ZIP file location
+                window.location.href = "app-release.apk";
+            });
+        });
+    </script>
+

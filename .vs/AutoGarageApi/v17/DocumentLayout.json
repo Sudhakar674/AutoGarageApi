@@ -35,8 +35,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T12:59:20.652Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -49,8 +48,7 @@
               "ViewState": "AQIAAEsGAAAAAAAAAAApwGYGAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-03T11:34:40.519Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -60,7 +58,7 @@
               "RelativeDocumentMoniker": "AutoGarageApi\\Controllers\\WebApiController.cs",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Controllers\\WebApiController.cs",
               "RelativeToolTip": "AutoGarageApi\\Controllers\\WebApiController.cs",
-              "ViewState": "AQIAABoIAAAAAAAAAAAAACUIAAAfAAAA",
+              "ViewState": "AQIAADUIAAAAAAAAAAAAACgIAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T06:53:54.143Z",
               "IsPinned": true,
