@@ -150,63 +150,109 @@ namespace AutoGarageApi.Controllers
             }
             return Json(Response, JsonRequestBehavior.AllowGet);
         }
+
+        //[HttpPost]
+        //public ActionResult SavePremiumInspection(SavePremiumInspectionRequest Request, List<SavePremiumInspectionRequest> AttachList, IEnumerable<HttpPostedFileBase> files)
+        //{
+        //    PremiumInspectionResponse Response = new PremiumInspectionResponse();
+        //    Request.ReportDate = string.IsNullOrEmpty(Request.ReportDate) ? null : Common.ConvertToSystemDate(Request.ReportDate, "dd/MM/yyyy");
+
+        //    DataSet ds1 = new DataSet();
+        //    ds1 = Request.SavePremiumInspection();
+        //    try
+        //    {
+        //        if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
+        //        {
+        //            Request.FK_PremiumInspectionId = ds1.Tables[0].Rows[0]["FK_PremiumInspectionId"].ToString();
+        //            Response.FK_PremiumInspectionId = ds1.Tables[0].Rows[0]["FK_PremiumInspectionId"].ToString();
+        //        }
+
+        //        DataSet ds2 = new DataSet();
+        //        var lst = files.FirstOrDefault();
+        //        if (lst != null)
+        //        {
+        //            foreach (var file in files)
+        //            {
+        //                Request.UploadFile = "/Images/PremiumInspectionFile/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
+        //                file.SaveAs(Path.Combine(Server.MapPath(Request.UploadFile)));
+        //                ds2 = Request.SavePremiumInspectionImage();
+        //            }
+        //        }
+
+        //        if (AttachList != null)
+        //        {
+        //            DataSet ds3 = new DataSet();
+        //            foreach (var Item in AttachList)
+        //            {
+        //                Request.FK_CarOptionMasterId = Item.FK_CarOptionMasterId;
+        //                ds3 = Request.SaveCarOptions();
+        //            }
+        //        }
+
+        //        if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
+        //        {
+        //            if (ds1.Tables[0].Rows[0]["MSG"].ToString() == "1")
+        //            {
+        //                Response.Status = "1";
+        //                Response.Message = "Record Save Successfully";
+        //            }
+        //            else
+        //            {
+        //                Response.Status = "0";
+        //                Response.Message = "Image allow only jpg and png";
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Response.Status = "0";
+        //            Response.Message = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Response.Status = "0";
+        //        Response.Message = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
+        //    }
+        //    return Json(Response, JsonRequestBehavior.AllowGet);
+        //}
+
+
         [HttpPost]
-        //public ActionResult SavePremiumInspection(SavePremiumInspectionRequest Request,HttpPostedFileBase UploadFile)
         public ActionResult SavePremiumInspection(SavePremiumInspectionRequest Request, IEnumerable<HttpPostedFileBase> files)
         {
             PremiumInspectionResponse Response = new PremiumInspectionResponse();
             Request.ReportDate = string.IsNullOrEmpty(Request.ReportDate) ? null : Common.ConvertToSystemDate(Request.ReportDate, "dd/MM/yyyy");
 
-            DataSet ds = Request.SavePremiumInspection();
+            DataSet ds1 = new DataSet();
+            ds1 = Request.SavePremiumInspection();
             try
             {
-
-                //if (UploadFile != null)
-                //{
-                //    Request.UploadFile = "/PremiumInspectionFile/" + Guid.NewGuid() + Path.GetExtension(UploadFile.FileName);
-                //    UploadFile.SaveAs(Path.Combine(Server.MapPath(Request.UploadFile)));
-                //}
-
-
-                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
                 {
-                    Request.FK_PremiumInspectionId = ds.Tables[0].Rows[0]["FK_PremiumInspectionId"].ToString();
-                    Response.FK_PremiumInspectionId = ds.Tables[0].Rows[0]["FK_PremiumInspectionId"].ToString();
+                    Request.FK_PremiumInspectionId = ds1.Tables[0].Rows[0]["FK_PremiumInspectionId"].ToString();
+                    Response.FK_PremiumInspectionId = ds1.Tables[0].Rows[0]["FK_PremiumInspectionId"].ToString();
                 }
 
-                /*      SavePremiumInspectionImage start   */
-
-                DataSet ds1 = new DataSet();
-                foreach (var file in files)
+                DataSet ds2 = new DataSet();
+                var lst = files.FirstOrDefault();
+                if (lst != null)
                 {
-                    //string logoname = Guid.NewGuid().ToString("N").Substring(0, 5);
-
-                    //var fileExt = System.IO.Path.GetExtension(file.FileName).Substring(1);
-                    //if (fileExt == "jpg" || fileExt == "png" || fileExt == "jpeg")
-                    //{
-                    //    var FlName = logoname + "." + fileExt;
-
-                    //    file.SaveAs(Server.MapPath("/Images/PremiumInspectionFile/" + FlName));
-
-                    //    //Request.UploadFile = "/Images/PremiumInspectionFile/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
-                    //    //file.SaveAs(Path.Combine(Server.MapPath(Request.UploadFile)));
-
-                    //    ds1 = Request.SavePremiumInspectionImage(FlName);
-                    //}
-                    //else
-                    //{
-                    //    Response.Message = "Image allow only jpg and png";
-
-                    //}
-
-
-                    Request.UploadFile = "/Images/PremiumInspectionFile/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
-                    file.SaveAs(Path.Combine(Server.MapPath(Request.UploadFile)));
-
-                    ds1 = Request.SavePremiumInspectionImage();
-
+                    foreach (var file in files)
+                    {
+                        Request.UploadFile = "/Images/PremiumInspectionFile/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
+                        file.SaveAs(Path.Combine(Server.MapPath(Request.UploadFile)));
+                        ds2 = Request.SavePremiumInspectionImage();
+                    }
                 }
 
+                DataSet ds3 = new DataSet();
+                string jsonString = Request.FK_CarOptionMasterId;
+                var jsonData = JsonConvert.DeserializeObject<dynamic>(jsonString);
+                foreach (var data in jsonData)
+                {
+                    Request.FK_CarOptionMasterId = data.FK_CarOptionMasterId;
+                    ds3 = Request.SaveCarOptions();
+                }
 
                 if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
                 {
@@ -226,18 +272,15 @@ namespace AutoGarageApi.Controllers
                     Response.Status = "0";
                     Response.Message = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
                 }
-
-                /*      SavePremiumInspectionImage end   */
-
-
             }
             catch (Exception ex)
             {
                 Response.Status = "0";
-                Response.Message = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                Response.Message = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
             }
             return Json(Response, JsonRequestBehavior.AllowGet);
         }
+
 
         [HttpGet]
         public ActionResult CarOptionList(GetCarOptionListRequest Request)
@@ -467,7 +510,7 @@ namespace AutoGarageApi.Controllers
                     Request.FK_HistoryAndRecordId = ds.Tables[0].Rows[0]["FK_HistoryAndRecordId"].ToString();
                 }
                 /*      SaveHistoryAndRecordsImage start   */
-                
+
                 DataSet ds1 = new DataSet();
                 foreach (var file in files)
                 {
@@ -546,7 +589,7 @@ namespace AutoGarageApi.Controllers
                     //    Response.Message = "Image allow only jpg and png";
                     //}
 
-                    
+
                     Request.UploadFile = "/Images/CarPhotos/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
                     file.SaveAs(Path.Combine(Server.MapPath(Request.UploadFile)));
                     ds1 = Request.SaveInspectionCarPhoto();
@@ -732,12 +775,12 @@ namespace AutoGarageApi.Controllers
         }
 
 
-        //List<SaveExteriorRequest>
+
         //[HttpPost]
-        //public ActionResult SaveExterior(List<SaveExteriorRequest> Request)
+        //public JsonResult SaveExteriorMulti(List<SaveExteriorMultiRequest> Requestlst)
         //{
         //    Response Response = new Response();
-        //    SaveExteriorRequest model = new SaveExteriorRequest();
+        //    SaveExteriorMultiRequest model = new SaveExteriorMultiRequest();
         //    try
         //    {
         //        //if (files != null)
@@ -746,41 +789,14 @@ namespace AutoGarageApi.Controllers
         //        //    files.SaveAs(Path.Combine(Server.MapPath(Request.Image)));
         //        //}
 
-
         //        DataSet ds1 = new DataSet();
-        //        //HttpPostedFileBase files;
-        //        foreach (var Item in Request)
+        //        foreach (var Item in Requestlst)
         //        {
         //            model.Title = Item.Title;
         //            model.Action = Item.Action;
         //            model.Remark = Item.Remark;
         //            model.FK_PremiumInspectionId = Item.FK_PremiumInspectionId;
-
-
-
-
-        //            //model.Image = Item.Image;
-
-        //            //model.files= Item.Image;
-
-        //            //var filesss = Item.Image;
-        //            //var filesss = Item.files;
-
-        //            var filename = Path.GetFileName(model.files.FileName);
-        //            var path = Path.Combine(Server.MapPath("/Images/ExteriorFile/"), filename);
-        //            model.files.SaveAs(path);
-
-
-        //            //if (filesss != null)
-        //            //{
-        //            //    model.Image = "/Images/ExteriorFile/" + Guid.NewGuid() + Path.GetExtension(Item.Image);
-        //            //    files.SaveAs(Path.Combine(Server.MapPath(model.Image)));
-        //            //}
-
-
-
-        //            ds1 = model.SaveExterior(model);
-
+        //            ds1 = model.SaveExteriorMulti(model);
         //        }
         //        if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
         //        {
@@ -1519,7 +1535,7 @@ namespace AutoGarageApi.Controllers
             List<PremiumInspectionImageList> lst1 = new List<PremiumInspectionImageList>();
 
             GetPremiumInspectionListRequest Request = new GetPremiumInspectionListRequest();
-            
+
 
             DataSet ds = Request.GetPremiumInspectionList(objmodel);
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -1544,6 +1560,7 @@ namespace AutoGarageApi.Controllers
                     obj.EngineType = dr["EngineType"].ToString();
                     obj.CarColor = dr["CarColor"].ToString();
                     obj.MobileNo = dr["Mobile"].ToString();
+                    obj.CustomerName = dr["CustomerName"].ToString();
                     obj.ReportNumber = dr["ReportNumber"].ToString();
                     obj.VINNumber = dr["VINNumber"].ToString();
                     //obj.UploadFile = "/Images/PremiumInspectionFile/" + dr["UploadFile"].ToString();
@@ -1573,7 +1590,7 @@ namespace AutoGarageApi.Controllers
 
         [HttpGet]
         public ActionResult GetSaveHistoryAndRecordsList(GetSaveHistoryAndRecordsListRequest Request)
-        
+
         {
             GetSaveHistoryAndRecordsListResponse Response = new GetSaveHistoryAndRecordsListResponse();
             List<GetSaveHistoryAndRecordsList> lst = new List<GetSaveHistoryAndRecordsList>();
@@ -1806,9 +1823,9 @@ namespace AutoGarageApi.Controllers
         //    return Json(Response, JsonRequestBehavior.AllowGet);
         //}
 
-       
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-   
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
         [HttpGet]
         public ActionResult GetSaveSteeringSystemList(GetSaveSteeringSystemListRequest Request)
@@ -2087,7 +2104,6 @@ namespace AutoGarageApi.Controllers
             }
             Response.CarHistoryList = lst1;
 
-
             ////////////////////////////////////////////////////////////////////////////////////////
 
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -2118,38 +2134,37 @@ namespace AutoGarageApi.Controllers
 
             ////////////////////////////////////////////////////////////////////////////////////////
 
-                string jsonString = ds.Tables[0].Rows[0]["HistoryAndRecordNew"].ToString();
-                var jsonData = JsonConvert.DeserializeObject<dynamic>(jsonString);
-                foreach (var data in jsonData)
-                {
-                    GetReportDetailstList obj = new GetReportDetailstList();
-                    obj.HistoryAndRecord = data.HistoryAndRecord;
-                    obj.NoOfLocalAccidents = data.NoOfLocalAccidents;
-                    obj.TypeOfUseInSide = data.TypeOfUseInSide;
-                    obj.EngineChangeInSide = data.EngineChangeInSide;
-                    obj.AirBag = data.AirBag;
-                    obj.TypeOfUseOutSide = data.TypeOfUseOutSide;
-                    obj.CarseerLastMeterReading = data.CarseerLastMeterReading;
-                    obj.BodyType = data.BodyType;
-                    obj.EngineChangeTechnicalSpecs = data.EngineChangeTechnicalSpecs;
-                    obj.OwnershipTransferFee = data.OwnershipTransferFee;
-                    obj.Owners = data.Owners;
-                    obj.StandardSeating = data.StandardSeating;
-                    obj.Height = data.Height;
-                    obj.HighwayMilleage = data.HighwayMilleage;
-                    obj.MadeIn = data.MadeIn;
-                    obj.Engine = data.Engine;
-                    obj.JordanianOwnership = data.JordanianOwnership;
-                    obj.RegistrationType = data.RegistrationType;
-                    obj.FuelCapacity = data.FuelCapacity;
-                    obj.Title = data.Title;
-                    obj.Remark = data.Remark;
-                    obj.Action = data.Action;
-                    lst.Add(obj);
-                }
-                Response.HistoryRecordDetails = lst;
-            
-
+            string jsonString = ds.Tables[0].Rows[0]["HistoryAndRecordNew"].ToString();
+            var jsonData = JsonConvert.DeserializeObject<dynamic>(jsonString);
+            foreach (var data in jsonData)
+            {
+                GetReportDetailstList obj = new GetReportDetailstList();
+                obj.HistoryAndRecord = data.HistoryAndRecord;
+                obj.NoOfLocalAccidents = data.NoOfLocalAccidents;
+                obj.TypeOfUseInSide = data.TypeOfUseInSide;
+                obj.EngineChangeInSide = data.EngineChangeInSide;
+                obj.AirBag = data.AirBag;
+                obj.TypeOfUseOutSide = data.TypeOfUseOutSide;
+                obj.CarseerLastMeterReading = data.CarseerLastMeterReading;
+                obj.BodyType = data.BodyType;
+                obj.EngineChangeTechnicalSpecs = data.EngineChangeTechnicalSpecs;
+                obj.OwnershipTransferFee = data.OwnershipTransferFee;
+                obj.Owners = data.Owners;
+                obj.StandardSeating = data.StandardSeating;
+                obj.Height = data.Height;
+                obj.HighwayMilleage = data.HighwayMilleage;
+                obj.MadeIn = data.MadeIn;
+                obj.Engine = data.Engine;
+                obj.JordanianOwnership = data.JordanianOwnership;
+                obj.RegistrationType = data.RegistrationType;
+                obj.FuelCapacity = data.FuelCapacity;
+                obj.Title = data.Title;
+                obj.Remark = data.Remark;
+                obj.Action = data.Action;
+                obj.CountryName = data.CountryName;
+                lst.Add(obj);
+            }
+            Response.HistoryRecordDetails = lst;
             return Json(Response, JsonRequestBehavior.AllowGet);
         }
 
@@ -2157,6 +2172,41 @@ namespace AutoGarageApi.Controllers
         {
             return View();
         }
+
+
+        [HttpGet]
+        public ActionResult GetSaveCarOptionList(GetSaveCarOptionListRequest Request)
+        {
+            List<GetSaveCarOptionListResponse> lst = new List<GetSaveCarOptionListResponse>();
+            DataSet ds = Request.GetSaveCarOptionList();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                Request.Status = "1";
+                Request.Message = "Record Found";
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    GetSaveCarOptionListResponse obj = new GetSaveCarOptionListResponse();
+                    obj.FK_PremiumInspectionId = dr["FK_PremiumInspectionId"].ToString();
+                    obj.FK_CarOptionMasterId = dr["FK_CarOptionMasterId"].ToString();
+                    obj.CarOption = dr["CarOption"].ToString();
+                    lst.Add(obj);
+                }
+                Request.GetSaveCarOptionlst = lst;
+            }
+            else
+            {
+                Request.Status = "0";
+                Request.Message = "Record Not Found";
+            }
+            return Json(Request, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+
+
+
 
 
         /*** From here show all save records list end ***/

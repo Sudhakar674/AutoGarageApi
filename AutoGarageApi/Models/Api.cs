@@ -144,6 +144,10 @@ namespace AutoGarageApi.Models
         public string EngineType { get; set; }
         public string CarColor { get; set; }
         public string Mobile { get; set; }
+        public string CustomerName { get; set; }
+        public string FK_CarOptionMasterId { get; set; }
+
+
         public DataSet SavePremiumInspection()
         {
             SqlParameter[] para =
@@ -160,7 +164,8 @@ namespace AutoGarageApi.Models
                                   new SqlParameter("@LicensePlateNumber",LicensePlateNumber),
                                     new SqlParameter("@EngineType",EngineType),
                                               new SqlParameter("@CarColor",CarColor),
-                                                   new SqlParameter("@Mobile",Mobile)
+                                                   new SqlParameter("@Mobile",Mobile),
+                                                      new SqlParameter("@CustomerName",CustomerName)
             };
             DataSet ds = Connection.ExecuteQuery("SavePremiumInspection", para);
             return ds;
@@ -177,7 +182,16 @@ namespace AutoGarageApi.Models
             return ds;
         }
 
-
+        public DataSet SaveCarOptions()
+        {
+            SqlParameter[] para =
+            {
+                 new SqlParameter("@FK_PremiumInspectionId",FK_PremiumInspectionId),
+                new SqlParameter("@FK_CarOptionMasterId",FK_CarOptionMasterId)
+            };
+            DataSet ds = Connection.ExecuteQuery("SaveCarOptions", para);
+            return ds;
+        }
     }
 
     /*      SavePremiumInspection end   */
@@ -585,7 +599,7 @@ namespace AutoGarageApi.Models
 
 
 
-    //public class SaveExteriorRequest
+    //public class SaveExteriorMultiRequest
     //{
     //    public string Title { get; set; }
     //    public string Image { get; set; }
@@ -595,7 +609,7 @@ namespace AutoGarageApi.Models
     //    public string Remark { get; set; }
     //    public string Action { get; set; }
     //    public string FK_PremiumInspectionId { get; set; }
-    //    public DataSet SaveExterior(SaveExteriorRequest objmodel)
+    //    public DataSet SaveExteriorMulti(SaveExteriorMultiRequest objmodel)
     //    {
     //        SqlParameter[] para =
     //        {
@@ -1053,6 +1067,7 @@ namespace AutoGarageApi.Models
         public string UploadFile { get; set; }
         public string FK_PremiumInspectionId { get; set; }
         public string MobileNo { get; set; }
+        public string CustomerName { get; set; }
         public string ReportNumber { get; set; }
         public string VINNumber { get; set; }
 
@@ -1545,7 +1560,6 @@ namespace AutoGarageApi.Models
     }
 
 
-
     public class GetReportLists
     {
         public string Status { get; set; }
@@ -1558,9 +1572,6 @@ namespace AutoGarageApi.Models
 
         public List<GetReportDetailsResponse> ReportDetailsListss { get; set; }
     }
-
-
-
 
     public class GetReportDetailsResponse
     {
@@ -1598,9 +1609,6 @@ namespace AutoGarageApi.Models
     }
     /*      GetReportDetails end   */
 
-
-
-
     //////////////////////////////////////////////////////////////////
 
     /*      Find Report Details Start   */
@@ -1620,7 +1628,6 @@ namespace AutoGarageApi.Models
             return ds;
         }
     }
-
 
     public class GetReportDetailsRespo
     {
@@ -1644,7 +1651,7 @@ namespace AutoGarageApi.Models
         public List<GetReportDetailstList> HistoryRecordDetails { get; set; }
         public List<CarHistoryList> CarHistoryList { get; set; }
 
-        
+
     }
     public class GetReportDetailstList
     {
@@ -1670,7 +1677,8 @@ namespace AutoGarageApi.Models
         public string FuelCapacity { get; set; }
         public string Title { get; set; }
         public string Action { get; set; }
-        public string Remark { get; set; }    
+        public string Remark { get; set; }
+        public string CountryName { get; set; }
     }
     public class CarHistoryList
     {
@@ -1681,13 +1689,40 @@ namespace AutoGarageApi.Models
         public string Image { get; set; }
     }
 
+    /*      Find Report Details End   */
 
 
 
+    /*      GetSaveCarOptionList start   */
+    public class GetSaveCarOptionListRequest
+    {
+        public string FK_PremiumInspectionId { get; set; }
+        public string Status { get; set; }
+        public string Message { get; set; }
+        public List<GetSaveCarOptionListResponse> GetSaveCarOptionlst { get; set; }
 
-
-
-
-
-        /*      Find Report Details End   */
+        public DataSet GetSaveCarOptionList()
+        {
+            SqlParameter[] para =
+           {             
+                new SqlParameter("@FK_PremiumInspectionId",FK_PremiumInspectionId)
+            };
+            DataSet ds = Connection.ExecuteQuery("GetSaveCarOptionList", para);
+            return ds;
+        }
     }
+    public class GetSaveCarOptionListResponse
+    {
+        public string FK_PremiumInspectionId { get; set; }
+        public string FK_CarOptionMasterId { get; set; }
+        public string CarOption { get; set; }
+    }
+    /*      GetSaveCarOptionList end   */
+
+
+
+
+
+
+
+}
