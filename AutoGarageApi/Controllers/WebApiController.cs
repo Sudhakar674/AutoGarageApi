@@ -1594,7 +1594,7 @@ namespace AutoGarageApi.Controllers
         {
             GetSaveHistoryAndRecordsListResponse Response = new GetSaveHistoryAndRecordsListResponse();
             List<GetSaveHistoryAndRecordsList> lst = new List<GetSaveHistoryAndRecordsList>();
-            List<GetSaveHistoryAndRecordsList2> lst2 = new List<GetSaveHistoryAndRecordsList2>();
+            //List<GetSaveHistoryAndRecordsList2> lst2 = new List<GetSaveHistoryAndRecordsList2>();
             DataSet ds = Request.GetSaveHistoryAndRecordsList();
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
@@ -1639,14 +1639,14 @@ namespace AutoGarageApi.Controllers
                 Response.GetSaveHistoryAndRecordsList = lst;
 
 
-                foreach (DataRow dr in ds.Tables[1].Rows)
-                {
-                    GetSaveHistoryAndRecordsList2 obj2 = new GetSaveHistoryAndRecordsList2();
-                    obj2.GetSaveHistoryAndRecordsDetails2 = dr["JSON_F52E2B61-18A1-11d1-B105-00805F49916B"].ToString();
+                //foreach (DataRow dr in ds.Tables[1].Rows)
+                //{
+                //    GetSaveHistoryAndRecordsList2 obj2 = new GetSaveHistoryAndRecordsList2();
+                //    obj2.GetSaveHistoryAndRecordsDetails2 = dr["JSON_F52E2B61-18A1-11d1-B105-00805F49916B"].ToString();
 
-                    lst2.Add(obj2);
-                }
-                Response.GetSaveHistoryAndRecordsList2 = lst2;
+                //    lst2.Add(obj2);
+                //}
+                //Response.GetSaveHistoryAndRecordsList2 = lst2;
 
             }
             else
@@ -1991,11 +1991,11 @@ namespace AutoGarageApi.Controllers
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     GetSavePowerTrainList obj = new GetSavePowerTrainList();
-                    //obj.Id = dr["Id"].ToString();
-                    //obj.Title = dr["Title"].ToString();
-                    //obj.Image = "/Images/PowerTrainFile/" + dr["Image"].ToString();
-                    //obj.Remark = dr["Remark"].ToString();
-                    obj.PowerTrainDetails = dr["PowerTrainDetails"].ToString();
+                    obj.Id = dr["Id"].ToString();
+                    obj.Title = dr["Title"].ToString();
+                    obj.Image = dr["Image"].ToString();
+                    obj.Remark = dr["Remark"].ToString();
+                    //obj.PowerTrainDetails = dr["PowerTrainDetails"].ToString();
                     lst.Add(obj);
                 }
                 Response.GetSavePowerTrainList = lst;
@@ -2186,8 +2186,8 @@ namespace AutoGarageApi.Controllers
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     GetSaveCarOptionListResponse obj = new GetSaveCarOptionListResponse();
-                    obj.FK_PremiumInspectionId = dr["FK_PremiumInspectionId"].ToString();
-                    obj.FK_CarOptionMasterId = dr["FK_CarOptionMasterId"].ToString();
+                    obj.Id = dr["Id"].ToString();
+                    obj.status = dr["status"].ToString();
                     obj.CarOption = dr["CarOption"].ToString();
                     lst.Add(obj);
                 }
@@ -2200,13 +2200,6 @@ namespace AutoGarageApi.Controllers
             }
             return Json(Request, JsonRequestBehavior.AllowGet);
         }
-
-
-
-
-
-
-
 
 
         /*** From here show all save records list end ***/

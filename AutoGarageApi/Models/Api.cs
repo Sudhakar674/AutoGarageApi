@@ -1108,7 +1108,7 @@ namespace AutoGarageApi.Models
         public string Status { get; set; }
         public string Message { get; set; }
         public List<GetSaveHistoryAndRecordsList> GetSaveHistoryAndRecordsList { get; set; }
-        public List<GetSaveHistoryAndRecordsList2> GetSaveHistoryAndRecordsList2 { get; set; }
+        //public List<GetSaveHistoryAndRecordsList2> GetSaveHistoryAndRecordsList2 { get; set; }
     }
     public class GetSaveHistoryAndRecordsList
     {
@@ -1147,12 +1147,12 @@ namespace AutoGarageApi.Models
     }
 
 
-    public class GetSaveHistoryAndRecordsList2
-    {
-        public string GetSaveHistoryAndRecordsDetails2 { get; set; }
+    //public class GetSaveHistoryAndRecordsList2
+    //{
+    //    public string GetSaveHistoryAndRecordsDetails2 { get; set; }
 
 
-    }
+    //}
 
     /*      GetHistoryAndRecordsList end   */
 
@@ -1504,10 +1504,11 @@ namespace AutoGarageApi.Models
     }
     public class GetSavePowerTrainList
     {
-        //public string Id { get; set; }
-        //public string Title { get; set; }
-        //public string Remark { get; set; }
-        //public string Action { get; set; }
+        public string Id { get; set; }
+        public string Title { get; set; }
+        public string Remark { get; set; }
+        public string Action { get; set; }
+        public string Image { get; set; }       
         public string PowerTrainDetails { get; set; }
     }
     /*      GetSavePowerTrainList end   */
@@ -1713,8 +1714,9 @@ namespace AutoGarageApi.Models
     }
     public class GetSaveCarOptionListResponse
     {
-        public string FK_PremiumInspectionId { get; set; }
-        public string FK_CarOptionMasterId { get; set; }
+
+        public string Id { get; set; }
+        public string status { get; set; }
         public string CarOption { get; set; }
     }
     /*      GetSaveCarOptionList end   */
