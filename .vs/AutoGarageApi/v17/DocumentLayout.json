@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\autogarageapi\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|solutionrelative:autogarageapi\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|d:\\sudhakar sharma\\repository\\autogarageapi\\autogarageapi\\controllers\\webapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|solutionrelative:autogarageapi\\controllers\\webapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\autogarageapi\\models\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|solutionrelative:autogarageapi\\models\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\autogarageapi\\models\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|solutionrelative:autogarageapi\\models\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\autogarageapi\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|solutionrelative:autogarageapi\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\autogarageapi\\models\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C60D11-490F-405E-9794-A426A0E3C513}|AutoGarageApi\\AutoGarageApi.csproj|solutionrelative:autogarageapi\\models\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +26,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Connection.cs",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Models\\Connection.cs",
               "RelativeDocumentMoniker": "AutoGarageApi\\Models\\Connection.cs",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Models\\Connection.cs",
               "RelativeToolTip": "AutoGarageApi\\Models\\Connection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T12:59:20.652Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Api.cs",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Models\\Api.cs",
               "RelativeDocumentMoniker": "AutoGarageApi\\Models\\Api.cs",
@@ -52,17 +57,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WebApiController.cs",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Controllers\\WebApiController.cs",
               "RelativeDocumentMoniker": "AutoGarageApi\\Controllers\\WebApiController.cs",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Controllers\\WebApiController.cs",
               "RelativeToolTip": "AutoGarageApi\\Controllers\\WebApiController.cs",
-              "ViewState": "AQIAADUIAAAAAAAAAAAAACgIAAAAAAAA",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAcwJYAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T06:53:54.143Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Common.cs",
+              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Models\\Common.cs",
+              "RelativeDocumentMoniker": "AutoGarageApi\\Models\\Common.cs",
+              "ToolTip": "D:\\Sudhakar Sharma\\repository\\AutoGarageApi\\AutoGarageApi\\Models\\Common.cs",
+              "RelativeToolTip": "AutoGarageApi\\Models\\Common.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T13:13:37.465Z"
             }
           ]
         }
