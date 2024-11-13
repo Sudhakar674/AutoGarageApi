@@ -4,18 +4,18 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>D:\Publish</_PublishTargetUrl>
-    <History>True|2024-10-16T11:36:50.1141189Z;</History>
+    <_PublishTargetUrl>D:\New Publish\AutoGarageApi</_PublishTargetUrl>
+    <History>True|2024-10-28T05:19:53.7640202Z;True|2024-10-28T10:37:52.2458816+05:30;True|2024-10-16T17:06:50.1141189+05:30;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AppBuildCode/app-release.apk">
       <publishTime>10/11/2024 19:07:44</publishTime>
     </File>
     <File Include="bin/AutoGarageApi.dll">
-      <publishTime>10/16/2024 17:09:52</publishTime>
+      <publishTime>10/28/2024 10:49:53</publishTime>
     </File>
     <File Include="bin/AutoGarageApi.pdb">
-      <publishTime>10/16/2024 17:09:52</publishTime>
+      <publishTime>10/28/2024 10:49:53</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>10/11/2024 11:24:30</publishTime>

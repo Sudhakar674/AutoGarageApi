@@ -14,8 +14,8 @@ namespace AutoGarageApi.Models
         {
             try
             {
-                connectionString = "Data Source=DESKTOP-8Q7N8BG\\SQLEXPRESS; Initial Catalog=AutoGarageApiNew25092024; Integrated Security=True; Encrypt=False";
-                //connectionString = "Data Source=DESKTOP-8Q7N8BG\\SQLEXPRESS; Initial Catalog=AutoGarageApiNew; User ID=DBServer; Password=Db123#;";
+                //connectionString = "Data Source=DESKTOP-8Q7N8BG\\SQLEXPRESS; Initial Catalog=AutoGarageApiNew25092024; Integrated Security=True; Encrypt=False";
+                connectionString = "Data Source=DESKTOP-8Q7N8BG\\SQLEXPRESS; Initial Catalog=AutoGarageApiNew; User ID=DBServer; Password=Db123#;";
             }
             catch (Exception)
             {

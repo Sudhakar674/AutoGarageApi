@@ -2008,7 +2008,6 @@ namespace AutoGarageApi.Controllers
             return Json(Response, JsonRequestBehavior.AllowGet);
         }
 
-
         [HttpGet]
         public ActionResult GetReportList(GetReportListRequest Request)
         {
@@ -2036,6 +2035,10 @@ namespace AutoGarageApi.Controllers
             }
             return Json(Response, JsonRequestBehavior.AllowGet);
         }
+
+
+
+
 
         [HttpGet]
         public ActionResult GetReportDetails(GetReportDetailsRequest Request)
@@ -2200,6 +2203,10 @@ namespace AutoGarageApi.Controllers
             }
             return Json(Request, JsonRequestBehavior.AllowGet);
         }
+
+
+
+
 
 
         /*** From here show all save records list end ***/

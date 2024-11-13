@@ -400,14 +400,11 @@ namespace AutoGarageApi.Models
         public string JordanianOwnership { get; set; }
         public string RegistrationType { get; set; }
         public string FuelCapacity { get; set; }
-
         public string Remark { get; set; }
         public string Action { get; set; }
         public string Title { get; set; }
         public string FK_PremiumInspectionId { get; set; }
-
         public string UploadFile { get; set; }
-
 
         public DataSet SaveHistoryAndRecords()
         {
@@ -443,8 +440,6 @@ namespace AutoGarageApi.Models
             DataSet ds = Connection.ExecuteQuery("SaveHistoryAndRecords", para);
             return ds;
         }
-
-
         public DataSet SaveHistoryAndRecordsImage()
         {
             SqlParameter[] para =
@@ -455,9 +450,6 @@ namespace AutoGarageApi.Models
             DataSet ds = Connection.ExecuteQuery("SaveHistoryAndRecordsImage", para);
             return ds;
         }
-
-
-
     }
     /*      SaveHistoryAndRecords end   */
 
@@ -469,7 +461,6 @@ namespace AutoGarageApi.Models
         public string FK_PremiumInspectionId { get; set; }
         public string UploadFile { get; set; }
         public string UploadFile2 { get; set; }
-
 
         public DataSet SaveInspectionCarPhoto()
         {
